@@ -1,124 +1,238 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { 
+  Home as HomeIcon, 
+  Search as SearchIcon, 
+  Library as LibraryIcon,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Shuffle,
+  SkipBack,
+  SkipForward,
+  Repeat,
+  Mic2,
+  Volume,
+  Laptop2,
+  LayoutList,
+  Maximize2
+} from 'lucide-react'
 
-const inter = Inter({ subsets: ['latin'] })
+import Image from 'next/image'
+
+import Album from '../components/Album';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="h-screen flex flex-col">
+      <div className="flex flex-1">
+        <aside className="w-72 bg-zinc-950 p-6">
+          <div className='flex items-center gap-1'>
+            <div className='w-3 h-3 bg-red-500 rounded-full'></div>
+            <div className='w-3 h-3 bg-yellow-500 rounded-full'></div>
+            <div className='w-3 h-3 bg-green-500 rounded-full'></div>
+          </div>
+
+          <nav className='space-y-4 mt-8'>
+            <a href="" className='flex items-center gap-2 text-xs font-semibold text-zinc-200'><HomeIcon />Home</a>
+            <a href="" className='flex items-center gap-2 text-xs font-semibold text-zinc-200'><SearchIcon />Search</a>
+            <a href="" className='flex items-center gap-2 text-xs font-semibold text-zinc-200'><LibraryIcon />Your library</a>
+          </nav>
+
+          <nav className='mt-6 pt-6 border-t border-zinc-800 flex flex-col gap-3'>
+            <a href='' className='bg-white/0-hover:bg-white/5 zinc-400 hover:text-zinc-100'>Curtidas</a>
+            <a href='' className='text-sm text-zinc-400 hover:text-zinc-100'>Vibes</a>
+            <a href='' className='text-sm text-zinc-400 hover:text-zinc-100'>LolFi</a>
+            <a href='' className='text-sm text-zinc-400 hover:text-zinc-100'>Sertanejo</a>
+            <a href='' className='text-sm text-zinc-400 hover:text-zinc-100'>MPB</a>
+            <a href='' className='text-sm text-zinc-400 hover:text-zinc-100'>Musics</a>
+          </nav>
+        </aside>
+
+        <main className="flex-1 p-6">
+          <div className='flex items-center gap-4'>
+            <button className='bg-black/40 p-2 rounded-full flex items-center justify-center'>
+              <ChevronLeft />
+            </button>
+
+            <button className='bg-black/40 p-2 rounded-full flex items-center justify-center'>
+            <ChevronRight />
+            </button>
+          </div>
+
+          <h1 className='font-semibold text-3xl mt-10'>Good Afternoon</h1>
+
+          <div className='grid grid-cols-3 gap-4 mt-6'>
+            <a href='' className='bg-white/5 hover:bg-white/20 group transition-colors rounded flex items-center gap-6 overflow-hidden'> 
+              <Image 
+                src={'/bart vibes.jpg'} 
+                alt='bart viber'
+                width={85}
+                height={85}
+              /> 
+              <strong>Playlist</strong>
+              <button className='w-12 h-12 p-2 pl-3 flex items-center justify-center rounded-full text-black bg-green-500 ml-auto mr-10 invisible group-hover:visible transition-colors'>
+                <Play />
+              </button>
+            </a>
+            <a href='' className='bg-white/5 hover:bg-white/20 group transition-colors rounded flex items-center gap-6 overflow-hidden'> 
+              <Image 
+                src={'/bart vibes.jpg'} 
+                alt='bart viber' 
+                width={85}
+                height={85}
+              />
+              <strong>Playlist</strong>
+                            <button className='w-12 h-12 p-2 pl-3 flex items-center justify-center rounded-full text-black bg-green-500 ml-auto mr-10 invisible group-hover:visible transition-colors'>
+                <Play />
+              </button>
+            </a>
+            <a href='' className='bg-white/5 hover:bg-white/20 group transition-colors rounded flex items-center gap-6 overflow-hidden'> 
+              <Image 
+                src={'/bart vibes.jpg'} 
+                alt='bart viber' 
+                width={85}
+                height={85}
+              />
+              <strong>Playlist</strong>
+                            <button className='w-12 h-12 p-2 pl-3 flex items-center justify-center rounded-full text-black bg-green-500 ml-auto mr-10 invisible group-hover:visible transition-colors'>
+                <Play />
+              </button>
+            </a>
+            <a href='' className='bg-white/5 hover:bg-white/20 group transition-colors rounded flex items-center gap-6 overflow-hidden'> 
+              <Image 
+                src={'/bart vibes.jpg'} 
+                alt='bart viber' 
+                width={85}
+                height={85}
+              />
+              <strong>Playlist</strong>
+                            <button className='w-12 h-12 p-2 pl-3 flex items-center justify-center rounded-full text-black bg-green-500 ml-auto mr-10 invisible group-hover:visible transition-colors'>
+                <Play />
+              </button>
+            </a>
+            <a href='' className='bg-white/5 hover:bg-white/20 group transition-colors rounded flex items-center gap-6 overflow-hidden'> 
+              <Image 
+                src={'/bart vibes.jpg'} 
+                alt='bart viber' 
+                width={85}
+                height={85}
+              />
+              <strong>Playlist</strong>
+              <button className='w-12 h-12 p-2 pl-3 flex items-center justify-center rounded-full text-black bg-green-500 ml-auto mr-10 invisible group-hover:visible transition-colors'>
+                <Play />
+              </button>
+            </a>
+            <a href='' className='bg-white/5 hover:bg-white/20 group transition-colors rounded flex items-center gap-6 overflow-hidden'> 
+              <Image 
+                src={'/bart vibes.jpg'} 
+                alt='bart viber' 
+                width={85}
+                height={85}
+              />
+              <strong>Playlist</strong>
+                            <button className='w-12 h-12 p-2 pl-3 flex items-center justify-center rounded-full text-black bg-green-500 ml-auto mr-10 invisible group-hover:visible transition-colors'>
+                <Play />
+              </button>
+            </a>
+          </div>
+
+          <h2 className='font-semibold text-2xl mt-10'>Made for Jorge Santos</h2>
+
+          <div className='grid xs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mt-4'>
+          {/* <Album description={'meu primeiro album'} link={''} path={'/bart vibes.jpg'} title={'Bart Vibes'} /> */}
+            <a href='' className='bg-white/0 hover:bg-white/5 p-3 rounded flex flex-col gap-2'>
+              <Image 
+                className='w-full rounded min-w-min'
+                src={'/bart vibes.jpg'} 
+                alt='bart viber'
+                width={85}
+                height={85}
+              /> 
+              <strong className='font-semibold'>Title</strong>
+              <p className='text-sm text-zinc-500'>description</p>
+            </a>
+            <a href='' className='bg-white/0 hover:bg-white/5 p-3 rounded flex flex-col gap-2'>
+              <Image 
+                className='w-full rounded min-w-min'
+                src={'/bart vibes.jpg'} 
+                alt='bart viber'
+                width={85}
+                height={85}
+              /> 
+              <strong className='font-semibold'>Title</strong>
+              <p className='text-sm text-zinc-500'>description</p>
+            </a>
+            <a href='' className='bg-white/0 hover:bg-white/5 p-3 rounded flex flex-col gap-2'>
+              <Image 
+                className='w-full rounded min-w-min max-w-xs'
+                src={'/bart vibes.jpg'} 
+                alt='bart viber'
+                width={85}
+                height={85}
+              /> 
+              <strong className='font-semibold'>Title</strong>
+              <p className='text-sm text-zinc-500'>description</p>
+            </a>
+            <a href='' className='bg-white/0 hover:bg-white/5 p-3 rounded flex flex-col gap-2'>
+              <Image 
+                className='w-full rounded min-w-min max-w-xs'
+                src={'/bart vibes.jpg'} 
+                alt='bart viber'
+                width={85}
+                height={85}
+              /> 
+              <strong className='font-semibold'>Title</strong>
+              <p className='text-sm text-zinc-500'>description</p>
+            </a>
+          </div>
+        </main>
+      </div>
+      <footer className="bg-zinc-800 border-t border-zinc-700 px-6 py-3 flex items-center justify-between">
+        <div className='flex items-center gap-3'>
+          <Image 
+            className='w-full rounded min-w-min max-w-xs'
+            src={'/bart vibes.jpg'} 
+            alt='bart viber'
+            width={85}
+            height={85}
+          />
+          <div className='flex flex-col'>
+            <strong className='font-normal text-sm'>Title</strong>
+            <p className='text-xs text-zinc-500'>description</p>
+          </div> 
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div className='flex flex-col items-center gap-2'>
+          <div className='flex flex-row items-center gap-6'>
+            <Shuffle size={18} className='text-zinc-200'/>
+            <SkipBack size={18} className='text-zinc-200'/>
+            <button className='w-8 h-98 p-1 pl-2 flex items-center justify-center rounded-full text-black bg-white transition-colors'>
+              <Play />
+            </button>
+            <SkipForward size={18} className='text-zinc-200'/>
+            <Repeat size={18} className='text-zinc-200'/>
+          </div>
+          <div className='flex flex-row items-center gap-2'>
+            <span className='text-xs text-zinc-500'>0:33</span>
+            <div className='h-1 rounded-full w-96 bg-zinc-600'>
+              <div className='rounded-full w-20 bg-zinc-100 h-1'/>
+            </div>
+            <span className='text-xs text-zinc-500'>2:50</span>
+          </div>
+        </div>
+        <div className='flex items-center gap-4'>
+          <Mic2 size={18}/> 
+          <LayoutList size={18}/> 
+          <Laptop2 size={18}/> 
+          
+          <div className='flex flex-row items-center gap-2'>
+            <Volume size={16}/> 
+            <div className='h-1 rounded-full w-16 bg-zinc-600'>
+              <div className='rounded-full w-3 bg-zinc-100 h-1'/>
+            </div>
+          </div>
+          
+          <Maximize2 size={16}/> 
+        </div>
+      </footer>
+    </div>
   )
 }
